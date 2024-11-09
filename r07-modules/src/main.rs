@@ -1,56 +1,14 @@
-// Module -> Defined inline.
-mod front_of_house {
-    // Sub-module.
-    pub mod hosting {
-        pub fn add_to_waitlist() {
-            println!("Added to waitlist");
-        }
-    }
-}
+// 'mod' is used to declare a module.
+// -> That this code uses a module called 'back_of_house'.
+// -> The compiler then looks for the file 'back_of_house.rs',
+//      for the code of the module, relative to current directory.
+// -> We only specify 'mod <module-name>' once and that too
+//      in the root of the crate.
+// -> We do similarly for sub-module, where we specify 'mod'
+//      in the parent module file and same for sub-sub-.. modules.
 
-mod back_of_house {
-
-    // Marking the struct public only allows
-    // ancestor modules to refer to it and
-    // call it's public methods.
-    //
-    // Each field that needs to public
-    // needs to be marked explicitly.
-    pub struct Breakfast {
-        pub toast: String,
-        seasonal_fruit: String,
-    }
-
-    // On contrary to structs, marking an enum public
-    // makes all of its variants public as well.
-    #[derive(Debug)]
-    pub enum Drink {
-        Juice,
-        Soda,
-        Lemonade,
-    }
-
-    impl Breakfast {
-        pub fn summer(toast: String) -> Self {
-            Breakfast {
-                toast,
-                seasonal_fruit: String::from("Guava"),
-            }
-        }
-    }
-
-    // Marking them pub -> as it is being used
-    // in an ancestor module.
-    //
-    // Marking them pub has nothing to do with
-    // using stuff that is defined in ancestor module.
-    pub mod orders {
-        pub fn process_order() {
-            // 'super' is like '..' when navigating fs in os.
-            super::super::deliver_order();
-        }
-    }
-}
+mod back_of_house;
+mod front_of_house;
 
 // Notice that we didn't need to declare 'font_of_house'
 // as public because the code which is making use of it,
