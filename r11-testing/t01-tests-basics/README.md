@@ -1,6 +1,6 @@
 1. Gotta have a test module.
 2. Tests are rust functions, just annotated with test attribute.
-3. Each test runs in a a thread.
+3. Each test runs in a separate thread.
    - The main thread marks a test as failed, if the test thread dies.
    - For example, calling panic macro -> thread dies.
 4. Arguments to `assert_eq!()` and `assert_ne!()` must implement
