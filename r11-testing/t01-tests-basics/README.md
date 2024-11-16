@@ -5,7 +5,7 @@
    - For example, calling panic macro -> thread dies.
 4. Arguments to `assert_eq!()` and `assert_ne!()` must implement
    the following traits:
-   - `PartialEq`: It compared left and right values using '==' or '!='.
+   - `PartialEq`: It compares left and right values using '==' or '!='.
    - `Debug`: It debug prints the values when assertion fails.
 5. When we do `cargo test` it first compiles the project in test mode.
    Then runs the tests.
