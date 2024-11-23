@@ -51,9 +51,9 @@ fn taking_ownership() {
         .join()
         .unwrap();
 
-    // We need to 'move' the value to the spawned thread
-    // because the main thread might finish before the thread
-    // and in that case the value will be dropped and the thread
+    // We need to do 'move' here because the main thread
+    // might finish before the spawned thread and in that case
+    // the value will be dropped and the thread
     // will have an invalid reference.
 }
 
