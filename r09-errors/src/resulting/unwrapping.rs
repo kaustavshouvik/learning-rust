@@ -3,9 +3,9 @@ use std::fs::File;
 pub fn unwrapping() {
     // Matching is a little to verbose.
 
-    // If we a simple use case and it's fine
+    // If we have a simple use case and it's fine
     // to exit the process if the file can't
-    // be opened, we might want to use 'unwrap()'.
+    // be opened then it's better to use 'unwrap()'.
 
     let file = File::open("text.txt").unwrap();
 
