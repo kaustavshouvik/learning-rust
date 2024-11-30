@@ -1,3 +1,5 @@
+mod refcell_with_rc;
+
 use std::cell::RefCell;
 
 trait Sender {
@@ -99,4 +101,6 @@ pub fn ref_cell_type() {
     // let mut_ref_2 = q.messages.borrow_mut();
 
     // As multiple mutable borrows at a time is not allowed.
+
+    refcell_with_rc::refcell_with_rc();
 }
