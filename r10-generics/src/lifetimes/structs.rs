@@ -1,8 +1,7 @@
 #[derive(Debug)]
-// The value pointing to the ref
-// that would be used to create
-// an instance have live longer
-// than the instance.
+// The value pointed to by 'refValue'
+// should live longer than an instance
+// of this struct.
 pub struct IHaveARef<'a> {
     pub refValue: &'a str,
 }
